@@ -1,0 +1,35 @@
+version: '3'
+services: 
+#    a2billing-mysql:
+#        container_name: "a2billing-mysql"
+#        image: mysql:5.7
+#        ports: 
+#            - 3306:3306
+#        environment:
+#            MYSQL_ROOT_PASSWORD: "mysqlsecret"
+#            MYSQL_DATABASE: "a2billing"
+#            MYSQL_USER: "a2billing"
+#            MYSQL_PASSWORD: "mysqlsecret"
+#    a2billing-apache:
+#        container_name: a2billing-apache
+#        image: httpd:2.4
+#        ports: 
+#            - 80:80
+#            - 443:443
+
+    a2billing-asterisk-ubuntu:
+        build:
+            context: /root/Netherland/DockerCompose
+        tty: true
+#    a2billing-asterisk-ubuntuu:
+#        build:
+#            context: /home/hannani/DockerCompose
+#        image: dockercompose_a2billing-asterisk-ubuntu
+#        container_name: a2billing-asterisk-ubuntuu
+#        tty: true
+        ports: 
+            - 5060:5060/udp
+            - 4569:4569/udp
+            - 5036:5036/udp
+            - 2727:2727/udp
+            - "10000-10100:10000-10100/udp"
